@@ -178,9 +178,9 @@ of it:
   up to it, so in the normal case the sender pays the network minimum;
 - Soroban's resource fee, added by the simulation and fixed into the signed transaction.
 
-On top of that, the account has to keep Stellar's minimum balance: 0.5 XLM for the account and 0.5
-for its USDC trustline. An account holding only USDC cannot pay, and one holding just over its
-minimum has nothing left for the fee.
+On top of that, the account has to keep Stellar's minimum balance: 1 XLM for the account (two base
+reserves) and 0.5 for its USDC trustline, 1.5 XLM in all. An account holding only USDC cannot pay,
+and one holding just over its minimum has nothing left for the fee.
 
 Nothing moves when this happens. If the simulation catches it, the build refuses with
 [`transaction_rejected`](/docs/errors/transaction_rejected); if it gets as far as submission, the RPC
